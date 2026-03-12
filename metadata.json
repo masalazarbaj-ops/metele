@@ -1,0 +1,7 @@
+{
+  "name": "METELE",
+  "description": "Aplicación de seguimiento ocular que reproduce un sonido molesto si miras tu teléfono por más de 5 segundos.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
