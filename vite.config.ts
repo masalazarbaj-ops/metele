@@ -8,7 +8,7 @@ export default defineConfig(({mode}) => {
   return {
     // 👇 ESTA ES LA LÍNEA NUEVA: Reemplaza 'nombre-de-tu-repositorio' por el nombre real de tu repo en GitHub
     // Por ejemplo, si tu repo es https://github.com/juan/mi-app, pon base: '/mi-app/',
-    base: '/nombre-de-tu-repositorio/',
+    base: 'metele',
 
     plugins: [react(), tailwindcss()],
     define: {
