@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://donprueba.online/metele/sitemap.xml

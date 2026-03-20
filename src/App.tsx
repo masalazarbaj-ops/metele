@@ -252,17 +252,35 @@ export default function App() {
   const secondsAway = Math.min(5, Math.floor(awayTime / 1000));
   const progressPercentage = Math.min(100, (awayTime / ALARM_THRESHOLD_MS) * 100);
 
+  const reportEmail = 'pruebadetiempos+pruebasmetele@gmail.com';
+  const gmailComposeUrl =
+    'https://mail.google.com/mail/?view=cm&fs=1&to=' +
+    encodeURIComponent(reportEmail) +
+    '&su=' +
+    encodeURIComponent('Reportar problema - METELE');
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col items-center py-12 px-4 font-sans">
       <div className="max-w-3xl w-full space-y-8">
         <div className="w-full flex items-start justify-start">
-          <div
-            className="w-10 h-10 border border-zinc-700/70 bg-zinc-900 rounded-md flex items-center justify-center text-xs tracking-widest text-zinc-100 shadow-sm"
-            style={{ fontFamily: '"Akira Expanded", "Arial Black", sans-serif' }}
-            aria-label="DP"
+          <a
+            href="https://donprueba.online"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+            aria-label="Ir a donprueba.online"
+            title="donprueba.online"
           >
-            DP
-          </div>
+            <div
+              className="w-10 h-10 border border-zinc-700/70 rounded-md flex items-center justify-center text-sm leading-none tracking-widest text-zinc-100 shadow-sm transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
+              style={{
+                fontFamily: '"Akira Expanded", "Arial Black", sans-serif',
+                backgroundColor: '#7f0000'
+              }}
+            >
+              DP
+            </div>
+          </a>
         </div>
 
         <div className="text-center space-y-4">
@@ -270,11 +288,12 @@ export default function App() {
             className="text-5xl font-black tracking-tighter text-white flex items-center justify-center gap-3"
             style={{ fontFamily: '"Monument Extended", "Arial Black", sans-serif' }}
           >
-            <Eye className="w-12 h-12 text-red-500" />
+            <Eye className="w-12 h-12 text-[#bd0003]" />
             METELE
           </h1>
           <p className="text-zinc-400 text-lg max-w-xl mx-auto">
-            Aplicación de seguimiento ocular. Si miras tu teléfono o te distraes por más de 5 segundos, sonará una alarma molesta.
+          En {' '}
+              <strong className="font-bold">DonPrueba</strong> queremos ayudarte!!, si miras tu teléfono o te distraes por más de 5 segundos, sonará una alarma molesta.
           </p>
         </div>
 
@@ -340,7 +359,7 @@ export default function App() {
             
             {!isCameraOn && !isLoading && (
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-zinc-500">
-                <Camera className="w-16 h-16 opacity-20" />
+                <Camera className="w-16 h-16 text-[#bd0003] opacity-20" />
                 <p>La cámara está apagada</p>
               </div>
             )}
@@ -390,13 +409,19 @@ export default function App() {
             <li>Si detecta que estás mirando hacia abajo (como a un teléfono) o hacia los lados, inicia un temporizador.</li>
             <li>Si el temporizador alcanza los 5 segundos, se reproducirá un sonido de alarma molesto.</li>
             <li>El sonido se detendrá automáticamente en cuanto vuelvas a mirar a la pantalla.</li>
-            <li>Todo el procesamiento se realiza localmente en tu navegador; NO se envían imágenes a ningún servidor.</li>
-            <li>Concentrarse es duro, pero es posible, y por eso creamos esta herramienta para ti; METELE.</li>
+            <li>
+              Todo el procesamiento se realiza localmente en tu navegador;{' '}
+              <strong className="font-bold">NO se envían imágenes a ningún servidor</strong>.
+            </li>
+            <li>
+              Concentrarse es duro, pero es posible, y por eso creamos esta herramienta para ti;{' '}
+              <strong className="font-bold">METELE</strong>.
+            </li>
           </ul>
         </div>
 
         <footer className="pt-6 text-center text-sm text-zinc-500">
-          "La concetracion es un poder" - Creado por{" "}
+          "La concentración reduce lo infinito a lo finito" - Creado por{" "}
           <a
             href="https://donprueba.online"
             target="_blank"
@@ -405,6 +430,18 @@ export default function App() {
           >
             DonPrueba
           </a>
+
+          <div className="mt-10">
+            <a
+              href={gmailComposeUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center px-4 py-2 rounded-xl border border-zinc-700/70 bg-zinc-900/60 text-zinc-200 hover:bg-zinc-800/70 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+              aria-label="Abrir Gmail para reportar problema"
+            >
+              Reportar Problema
+            </a>
+          </div>
         </footer>
       </div>
     </div>
