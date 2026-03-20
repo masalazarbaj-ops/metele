@@ -255,9 +255,21 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 flex flex-col items-center py-12 px-4 font-sans">
       <div className="max-w-3xl w-full space-y-8">
-        
+        <div className="w-full flex items-start justify-start">
+          <div
+            className="w-10 h-10 border border-zinc-700/70 bg-zinc-900 rounded-md flex items-center justify-center text-xs tracking-widest text-zinc-100 shadow-sm"
+            style={{ fontFamily: '"Akira Expanded", "Arial Black", sans-serif' }}
+            aria-label="DP"
+          >
+            DP
+          </div>
+        </div>
+
         <div className="text-center space-y-4">
-          <h1 className="text-5xl font-black tracking-tighter text-white flex items-center justify-center gap-3">
+          <h1
+            className="text-5xl font-black tracking-tighter text-white flex items-center justify-center gap-3"
+            style={{ fontFamily: '"Monument Extended", "Arial Black", sans-serif' }}
+          >
             <Eye className="w-12 h-12 text-red-500" />
             METELE
           </h1>
@@ -372,18 +384,29 @@ export default function App() {
         </div>
         
         <div className="bg-zinc-900/50 border border-zinc-800/50 rounded-2xl p-6 text-sm text-zinc-400 space-y-4">
-          <h3 className="text-zinc-200 font-semibold text-base">¿Cómo funciona?</h3>
+          <h3 className="text-zinc-200 font-semibold text-base">¿Cómo funciona esta cosa?</h3>
           <ul className="list-disc list-inside space-y-2">
             <li>La aplicación utiliza inteligencia artificial (MediaPipe) para detectar la orientación de tu rostro.</li>
             <li>Si detecta que estás mirando hacia abajo (como a un teléfono) o hacia los lados, inicia un temporizador.</li>
             <li>Si el temporizador alcanza los 5 segundos, se reproducirá un sonido de alarma molesto.</li>
             <li>El sonido se detendrá automáticamente en cuanto vuelvas a mirar a la pantalla.</li>
-            <li>Todo el procesamiento se realiza localmente en tu navegador; no se envían imágenes a ningún servidor.</li>
+            <li>Todo el procesamiento se realiza localmente en tu navegador; NO se envían imágenes a ningún servidor.</li>
+            <li>Concentrarse es duro, pero es posible, y por eso creamos esta herramienta para ti; METELE.</li>
           </ul>
         </div>
 
+        <footer className="pt-6 text-center text-sm text-zinc-500">
+          "La concetracion es un poder" - Creado por{" "}
+          <a
+            href="https://donprueba.online"
+            target="_blank"
+            rel="noreferrer"
+            className="text-zinc-200 hover:text-white underline underline-offset-4 transition-colors"
+          >
+            DonPrueba
+          </a>
+        </footer>
       </div>
     </div>
   );
 }
-
