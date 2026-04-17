@@ -491,7 +491,7 @@ export default function App() {
               title="donprueba.online"
             >
               <img
-                src="public/logoDP.png"
+                src="/logoDP.png"
                 alt="Logo de METELE"
                 className="h-12 w-12 rounded-md"
               />
