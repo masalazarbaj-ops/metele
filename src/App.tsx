@@ -24,9 +24,10 @@ const SOUND_OPTIONS: Array<{
   description: string;
 }> = [
   { value: 'default', label: 'Default', description: 'El sonido original actual' },
-  { value: 'roaster', label: 'Roaster', description: 'Alarma estilo rooster' },
+  { value: 'roaster', label: 'Rooster', description: 'Canto de gallo' },
   { value: 'ambulance', label: 'Ambulance', description: 'Sirena de ambulancia' },
 ];
+const SIDE_WORD_COUNT = 14;
 
 export default function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -440,10 +441,45 @@ export default function App() {
     encodeURIComponent(reportEmail) +
     '&su=' +
     encodeURIComponent('Reportar problema - METELE');
+  const sideWords = Array.from({ length: SIDE_WORD_COUNT }, (_, index) => index);
 
   return (
-    <div className="min-h-screen bg-zinc-950 px-4 py-12 font-sans text-zinc-100">
-      <div className="mx-auto w-full max-w-3xl space-y-8">
+    <div className="relative min-h-screen overflow-hidden bg-zinc-950 px-4 py-12 font-sans text-zinc-100">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 left-0 hidden w-40 overflow-hidden lg:block xl:w-56"
+      >
+        <div className="absolute inset-y-[-8%] left-[-1.75rem] flex flex-col justify-between xl:left-[-0.5rem]">
+          {sideWords.map((index) => (
+            <span
+              key={`left-${index}`}
+              className="select-none whitespace-nowrap -rotate-45 text-[1.7rem] font-black uppercase tracking-[0.35em] text-zinc-800/70 xl:text-[2.2rem]"
+              style={{ fontFamily: '"Monument Extended", "Arial Black", sans-serif' }}
+            >
+              METELE
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-y-0 right-0 hidden w-40 overflow-hidden lg:block xl:w-56"
+      >
+        <div className="absolute inset-y-[-8%] right-[-1.75rem] flex flex-col items-end justify-between xl:right-[-0.5rem]">
+          {sideWords.map((index) => (
+            <span
+              key={`right-${index}`}
+              className="select-none whitespace-nowrap rotate-45 text-[1.7rem] font-black uppercase tracking-[0.35em] text-zinc-800/70 xl:text-[2.2rem]"
+              style={{ fontFamily: '"Monument Extended", "Arial Black", sans-serif' }}
+            >
+              METELE
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-3xl space-y-8">
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center justify-center gap-3 sm:gap-4">
             <a
@@ -454,15 +490,11 @@ export default function App() {
               aria-label="Ir a donprueba.online"
               title="donprueba.online"
             >
-              <div
-                className="flex h-10 w-10 items-center justify-center rounded-md border border-zinc-700/70 text-sm leading-none tracking-widest text-zinc-100 shadow-sm transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
-                style={{
-                  fontFamily: '"Akira Expanded", "Arial Black", sans-serif',
-                  backgroundColor: '#7f0000',
-                }}
-              >
-                DP
-              </div>
+              <img
+                src="public/logoDP.png"
+                alt="Logo de METELE"
+                className="h-12 w-12 rounded-md"
+              />
             </a>
 
             <h1
