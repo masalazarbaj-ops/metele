@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://donprueba.online/metele/sitemap.xml
+# Sitemap index for DonPrueba / METELE projects
+Sitemap: https://donprueba.online/sitemap_index.xml
