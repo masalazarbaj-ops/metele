@@ -434,7 +434,7 @@ export default function App() {
     SOUND_OPTIONS.find((option) => option.value === selectedAlarmSound)?.label ??
     'Default';
 
-  const reportEmail = 'pruebadetiempos+pruebasmetele@gmail.com';
+  const reportEmail = 'pruebadetiempos+problemametele@gmail.com';
   const gmailComposeUrl =
     'https://mail.google.com/mail/?view=cm&fs=1&to=' +
     encodeURIComponent(reportEmail) +
@@ -444,36 +444,37 @@ export default function App() {
   return (
     <div className="min-h-screen bg-zinc-950 px-4 py-12 font-sans text-zinc-100">
       <div className="mx-auto w-full max-w-3xl space-y-8">
-        <div className="flex w-full items-start justify-start">
-          <a
-            href="https://donprueba.online"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
-            aria-label="Ir a donprueba.online"
-            title="donprueba.online"
-          >
-            <div
-              className="flex h-10 w-10 items-center justify-center rounded-md border border-zinc-700/70 text-sm leading-none tracking-widest text-zinc-100 shadow-sm transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
-              style={{
-                fontFamily: '"Akira Expanded", "Arial Black", sans-serif',
-                backgroundColor: '#7f0000',
-              }}
+        <div className="flex flex-col items-center gap-4">
+          <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <a
+              href="https://donprueba.online"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex shrink-0 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950"
+              aria-label="Ir a donprueba.online"
+              title="donprueba.online"
             >
-              DP
-            </div>
-          </a>
-        </div>
+              <div
+                className="flex h-10 w-10 items-center justify-center rounded-md border border-zinc-700/70 text-sm leading-none tracking-widest text-zinc-100 shadow-sm transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0"
+                style={{
+                  fontFamily: '"Akira Expanded", "Arial Black", sans-serif',
+                  backgroundColor: '#7f0000',
+                }}
+              >
+                DP
+              </div>
+            </a>
 
-        <div className="space-y-4 text-center">
-          <h1
-            className="flex items-center justify-center gap-3 text-5xl font-black tracking-tighter text-white"
-            style={{ fontFamily: '"Monument Extended", "Arial Black", sans-serif' }}
-          >
-            <Eye className="h-12 w-12 text-[#bd0003]" />
-            METELE
-          </h1>
-          <p className="mx-auto max-w-xl text-lg text-zinc-400">
+            <h1
+              className="flex items-center justify-center gap-2 whitespace-nowrap text-[clamp(2rem,7vw,3rem)] font-black tracking-tighter text-white sm:gap-3"
+              style={{ fontFamily: '"Monument Extended", "Arial Black", sans-serif' }}
+            >
+              <Eye className="h-[clamp(2rem,6vw,3rem)] w-[clamp(2rem,6vw,3rem)] shrink-0 text-[#bd0003]" />
+              METELE
+            </h1>
+          </div>
+
+          <p className="mx-auto max-w-xl text-center text-lg text-zinc-400">
             En <strong className="font-bold">DonPrueba</strong> queremos ayudarte!!,
             si miras tu teléfono o te distraes por más de 5 segundos, sonará una
             alarma molesta.
