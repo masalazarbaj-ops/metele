@@ -491,8 +491,8 @@ export default function App() {
               title="donprueba.online"
             >
               <img
-                src="/logoDP.png"
-                alt="Logo de METELE"
+                src="/logoDP.webp"
+                alt="Logo de DonPrueba"
                 className="h-12 w-12 rounded-md"
               />
             </a>
@@ -506,10 +506,12 @@ export default function App() {
             </h1>
           </div>
 
-          <p className="mx-auto max-w-xl text-center text-lg text-zinc-400">
-            En <strong className="font-bold">DonPrueba</strong> queremos ayudarte!!,
-            si miras tu teléfono o te distraes por más de 5 segundos, sonará una
-            alarma molesta.
+          <p className="mx-auto max-w-2xl text-center text-lg text-zinc-400">
+            <strong className="font-bold text-zinc-200">METELE</strong> es una app
+            para concentrarse creada por <strong className="font-bold">DonPrueba</strong>.
+            Si buscas una aplicación para concentrarse o una página para concentrarse
+            que detecte distracciones en tiempo real, aquí puedes volver al foco en
+            segundos.
           </p>
         </div>
 
@@ -692,7 +694,6 @@ export default function App() {
                 </>
               )}
             </button>
-
           </div>
         </div>
 
@@ -732,7 +733,9 @@ export default function App() {
         </section>
 
         <div className="space-y-4 rounded-2xl border border-zinc-800/50 bg-zinc-900/50 p-6 text-sm text-zinc-400">
-          <h3 className="text-base font-semibold text-zinc-200">¿Cómo funciona esta cosa?</h3>
+          <h2 className="text-base font-semibold text-zinc-200">
+            METELE, app para concentrarse: ¿cómo funciona?
+          </h2>
           <ul className="list-inside list-disc space-y-2">
             <li>
               La aplicación utiliza inteligencia artificial (MediaPipe) para detectar
@@ -755,12 +758,14 @@ export default function App() {
               retomarlo antes si ya volviste.
             </li>
             <li>
-              Todo el procesamiento se realiza localmente en tu navegador;{' '}
+              Como aplicación para concentrarse en la web, todo el procesamiento se
+              realiza localmente en tu navegador;{' '}
               <strong className="font-bold">NO se envían imágenes a ningún servidor</strong>.
             </li>
             <li>
-              Concentrarse es duro, pero es posible, y por eso creamos esta
-              herramienta para ti; <strong className="font-bold">METELE</strong>.
+              Si necesitas una página para concentrarse con seguimiento ocular y
+              alerta automática, <strong className="font-bold">METELE</strong> está
+              hecha para eso.
             </li>
           </ul>
         </div>
