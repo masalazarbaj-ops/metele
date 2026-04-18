@@ -1,0 +1,52 @@
+{
+  "name": "METELE - App para concentrarse",
+  "short_name": "METELE",
+  "description": "METELE es una app para concentrarse que detecta distracciones con seguimiento ocular y te ayuda a recuperar el enfoque en segundos.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0a0a0a",
+  "theme_color": "#bd0003",
+  "lang": "es",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/favicon-eye-red.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logoDP.webp",
+      "sizes": "any",
+      "type": "image/webp",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/logoDP.webp",
+      "sizes": "540x720",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    }
+  ],
+  "categories": ["productivity", "utilities"],
+  "shortcuts": [
+    {
+      "name": "Iniciar METELE",
+      "short_name": "Iniciar",
+      "description": "Inicia METELE para concentrarte",
+      "url": "/?focus=true",
+      "icons": [
+        {
+          "src": "/favicon-eye-red.svg",
+          "sizes": "any",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ]
+}

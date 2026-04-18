@@ -13,12 +13,24 @@
       content="METELE app para concentrarse, METELE aplicación para concentrarse, METELE pagina para concentrarse, app para concentrarse, aplicación para concentrarse, página para concentrarse, concentracion, enfoque, productividad, seguimiento ocular"
     />
     <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="googlebot" content="index, follow, max-image-preview:large" />
+    <!-- Controlar uso para entrenamiento de IA -->
+    <meta name="robots" content="index, follow, max-image-preview:large, noimageindex" />
+    <meta name="googlebot" content="index, follow, notranslate" />
+    <meta name="bingbot" content="index, follow" />
     <meta name="author" content="DonPrueba" />
     <meta name="application-name" content="METELE" />
     <meta name="theme-color" content="#0a0a0a" />
+    
+    <!-- Favicon en múltiples formatos para máxima compatibilidad y visibilidad en Google -->
     <link rel="icon" type="image/svg+xml" href="/favicon-eye-red.svg" />
+    <link rel="apple-touch-icon" href="/favicon-eye-red.svg" />
+    <link rel="shortcut icon" href="/favicon-eye-red.svg" type="image/svg+xml" />
+    
+    <!-- Web App Manifest para PWA y mejor indexación en Google -->
+    <link rel="manifest" href="/manifest.json" />
 
-    <link rel="canonical" href="https://donprueba.online/metele/" />
+    <link rel="canonical" href="https://metele.work/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
@@ -31,8 +43,8 @@
       property="og:description"
       content="METELE es una app para concentrarse y una aplicación web para concentrarse. Si te distraes por varios segundos, esta página para concentrarse te alerta para recuperar el enfoque."
     />
-    <meta property="og:url" content="https://donprueba.online/metele/" />
-    <meta property="og:image" content="https://donprueba.online/metele/logoDP.webp" />
+    <meta property="og:url" content="https://metele.work/" />
+    <meta property="og:image" content="https://metele.work/logoDP.webp" />
     <meta property="og:image:alt" content="Logo de METELE, app para concentrarse" />
 
     <meta name="twitter:card" content="summary_large_image" />
@@ -44,7 +56,7 @@
       name="twitter:description"
       content="Mejora tu enfoque con METELE, una app para concentrarse y aplicación web para concentrarse con alertas en tiempo real."
     />
-    <meta name="twitter:image" content="https://donprueba.online/metele/logoDP.webp" />
+    <meta name="twitter:image" content="https://metele.work/logoDP.webp" />
 
     <script type="application/ld+json">
       {
@@ -61,8 +73,13 @@
         "inLanguage": "es",
         "description": "METELE es una app para concentrarse, una aplicación para concentrarse y una página para concentrarse que detecta distracciones con seguimiento ocular y te ayuda a volver al foco.",
         "keywords": "METELE app para concentrarse, METELE aplicación para concentrarse, METELE pagina para concentrarse, app para concentrarse, aplicación para concentrarse, página para concentrarse",
-        "url": "https://donprueba.online/metele/",
-        "image": "https://donprueba.online/metele/logoDP.webp",
+        "url": "https://metele.work/",
+        "image": "https://metele.work/logoDP.webp",
+        "isPartOf": {
+          "@type": "Organization",
+          "name": "DonPrueba",
+          "url": "https://donprueba.online/"
+        },
         "offers": {
           "@type": "Offer",
           "price": "0",

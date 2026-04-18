@@ -1,5 +1,18 @@
 User-agent: *
 Allow: /
 
-# Sitemap index for DonPrueba / METELE projects
-Sitemap: https://donprueba.online/sitemap_index.xml
+# Disallow patrones específicos si es necesario (ej: assets privados)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Disallow crawling innecesario
+Disallow: /*.json$
+Disallow: /*.webp$
+Disallow: /*.svg$
+
+# Directivas de rastreo
+Crawl-delay: 1
+
+# Sitemap para metele.work
+Sitemap: https://metele.work/sitemap.xml
+Sitemap: https://metele.work/sitemap_index.xml
