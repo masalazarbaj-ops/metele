@@ -29,6 +29,43 @@ const SOUND_OPTIONS: Array<{
 ];
 const SIDE_WORD_COUNT = 14;
 
+const TERMS_TEXT = `Términos y condiciones
+
+1. Uso de la aplicación
+METELE es una aplicación web que utiliza la cámara del dispositivo para detectar la orientación del rostro y ayudar a mantener la concentración. Todo el procesamiento se realiza localmente en el navegador y no se envían imágenes ni datos biométricos a ningún servidor.
+
+2. Responsabilidad
+El usuario es responsable del uso que haga de la aplicación y de los permisos otorgados a la cámara. METELE se proporciona "tal cual", sin garantías de ningún tipo.
+
+3. Privacidad
+No se recopilan, almacenan ni comparten datos personales ni imágenes. Consulta la Política de privacidad para más detalles.
+
+4. Cambios
+Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado de la aplicación implica la aceptación de los cambios.
+
+5. Contacto
+Para consultas o reportes: pruebadetiempos+problemametele@gmail.com.`;
+
+const PRIVACY_TEXT = `Política de privacidad
+
+1. Datos recopilados
+METELE no recopila, almacena ni transmite datos personales. El procesamiento de video se realiza íntegramente en el dispositivo del usuario mediante MediaPipe.
+
+2. Cámara
+El acceso a la cámara se solicita únicamente para el funcionamiento de la detección. Las imágenes no se guardan ni se envían a ningún servidor.
+
+3. Cookies y almacenamiento
+La aplicación no utiliza cookies de seguimiento. Puede usar almacenamiento local del navegador únicamente para preferencias de la aplicación.
+
+4. Terceros
+No se comparten datos con terceros. Los recursos externos (modelos de IA, fuentes) se cargan desde CDNs públicos.
+
+5. Derechos del usuario
+El usuario puede revocar los permisos de cámara en cualquier momento desde la configuración del navegador.
+
+6. Contacto
+Para consultas sobre privacidad: pruebadetiempos+problemametele@gmail.com.`;
+
 export default function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const faceLandmarkerRef = useRef<FaceLandmarker | null>(null);
@@ -57,7 +94,25 @@ export default function App() {
   const [bathroomBreakRemainingMs, setBathroomBreakRemainingMs] =
     useState(BATHROOM_BREAK_MS);
 
+  const getRoute = () => {
+    const hash = window.location.hash.replace(/^#\/?/, '').toLowerCase();
+    if (hash === 'terminos' || hash === 'terminos-y-condiciones') return 'terminos';
+    if (hash === 'privacidad' || hash === 'politica-de-privacidad') return 'privacidad';
+    return 'home';
+  };
+  const [route, setRoute] = useState(getRoute);
+
   useEffect(() => {
+    const onHash = () => setRoute(getRoute());
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  useEffect(() => {
+    if (getRoute() !== 'home') {
+      setIsLoading(false);
+      return;
+    }
+
     const originalInfo = console.info;
     const originalLog = console.log;
 
@@ -443,6 +498,29 @@ export default function App() {
     encodeURIComponent('Reportar problema - METELE');
   const sideWords = Array.from({ length: SIDE_WORD_COUNT }, (_, index) => index);
 
+  if (route === 'terminos' || route === 'privacidad') {
+    const title =
+      route === 'terminos' ? 'Términos y condiciones' : 'Política de privacidad';
+    const body = route === 'terminos' ? TERMS_TEXT : PRIVACY_TEXT;
+
+    return (
+      <div className="min-h-screen bg-black px-6 py-12 font-sans text-white">
+        <div className="mx-auto max-w-3xl">
+          <a
+            href="#/"
+            className="text-sm text-zinc-400 underline underline-offset-4 transition-colors hover:text-white"
+          >
+            ← Volver a METELE
+          </a>
+          <h1 className="mt-6 text-3xl font-black tracking-tight">{title}</h1>
+          <div className="mt-6 space-y-4 whitespace-pre-line text-base leading-relaxed text-zinc-200">
+            {body}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-zinc-950 px-4 py-12 font-sans text-zinc-100">
       <div
@@ -771,6 +849,14 @@ export default function App() {
         </div>
 
         <footer className="pt-6 text-center text-sm text-zinc-500">
+          <div className="mb-4 flex items-center justify-center gap-4 text-xs text-zinc-500">
+            <a href="#/terminos" className="underline underline-offset-4 transition-colors hover:text-white">
+              Términos y condiciones
+            </a>
+            <a href="#/privacidad" className="underline underline-offset-4 transition-colors hover:text-white">
+              Política de privacidad
+            </a>
+          </div>
           "La concentración reduce lo infinito a lo finito" - Creado por{' '}
           <a
             href="https://donprueba.online"
